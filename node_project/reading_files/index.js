@@ -18,3 +18,14 @@ fs.readFile('./other.txt','utf-8',(err, data) => {
 // what format is it in
 // and last what do you want to do with the file
 // in this case either an error or data with a callback function
+
+fs.readdir('../', (err, data) => {
+  console.log(data);
+  // [
+  //   'index.js',
+  //   'node_modules',
+  //   'package-lock.json',
+  //   'package.json',
+  //   'reading_files'
+  // ]
+});
