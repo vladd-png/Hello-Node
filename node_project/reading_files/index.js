@@ -29,3 +29,15 @@ fs.readdir('../', (err, data) => {
   //   'reading_files'
   // ]
 });
+
+var sayHello = 'How Are You?';
+
+fs.writeFile('myFile.txt', sayHello, (err) => {
+  console.log('Success', err);
+});
+
+var obj = {"name" : "Ranger Danger", "Breed": "Good Boy"};
+
+fs.writeFile('myObj.json', JSON.stringify(obj), (err) => {
+  console.log(err);
+})
