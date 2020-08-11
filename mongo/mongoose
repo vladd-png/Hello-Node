@@ -1,0 +1,7 @@
+var mongoose = require("mongoose");
+
+var theDatabaseURL = "mongodb+srv://vladd:December@1092@myfirstcluster.0ehvv.mongodb.net/<dbname>?retryWrites=true&w=majority"
+
+mongoose.connect(theDatabaseURL, { useMongoClient: true }, (err) => {
+  console.log("Success", err);
+})
