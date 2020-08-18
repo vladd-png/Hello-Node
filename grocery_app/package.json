@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "body-parser": "*",
+    "socket.io": "*",
+    "mongoose": "*"
   }
 }
