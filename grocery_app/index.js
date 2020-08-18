@@ -1,5 +1,5 @@
 var express = require("express");
-var bodyParser = requier("body-parser");
+var bodyParser = require("body-parser");
 var app = express();
 // this creates the server for us
 app.use(express.static(__dirname));
@@ -12,6 +12,11 @@ var allItems = [
 
 app.get('/items', (request, response) => {
   response.send(allItems);
+});
+
+app.post('/items', (request, response) => {
+  allItems.push(request.body);
+  request.sendStatus(200);
 });
 
 var server = app.listen(3000, () => {
