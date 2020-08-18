@@ -18,6 +18,7 @@
 
     <script type="text/javascript">
       $(() => {
+        getAllItems();
         $("#addItemBtn").click(() => {
           addItem({"item": $("#itemBox").val()})
         });
@@ -28,7 +29,11 @@
         $("#itemBox").val("");
       }
 
-      function
+      function getAllItems() {
+        $.get("http://localhost:3000/items", (data) => {
+          data.forEach(addItem);
+        })
+      }
 
     </script>
   </body>
