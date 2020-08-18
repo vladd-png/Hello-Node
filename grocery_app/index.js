@@ -22,7 +22,9 @@ app.get('/items', (request, response) => {
 
 app.post('/items', (request, response) => {
   allItems.push(request.body);
-  request.sendStatus(200);
+  // how you broadcast a message from your server to everything that is connected
+  socketio.emit('broadcast', request.body)
+  response.sendStatus(200);
 });
 
 // whenever someone new logs on - connection - recieve a notification
