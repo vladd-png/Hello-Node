@@ -20,7 +20,9 @@
       $(() => {
         getAllItems();
         $("#addItemBtn").click(() => {
-          addItem({"item": $("#itemBox").val()})
+          //addItem({"item": $("#itemBox").val()})
+          var theItem = {"item" : $("#itemBox").val()}
+          postItem(theItem);
         });
       });
 
@@ -33,6 +35,10 @@
         $.get("http://localhost:3000/items", (data) => {
           data.forEach(addItem);
         })
+      }
+
+      function postItem(theItem) {
+        $.post("http://localhost:3000/items", theItem);
       }
 
     </script>
