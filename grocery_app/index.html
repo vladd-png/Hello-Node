@@ -20,7 +20,11 @@
       $(() => {
         getAllItems();
         $("#addItemBtn").click(() => {
-          //addItem({"item": $("#itemBox").val()})
+          // this line adds it visually without refreshing
+          // will add socket.io for dynamic messaging without refreshing
+          // addItem({"item": $("#itemBox").val()})
+
+          // this line adds it to the server
           var theItem = {"item" : $("#itemBox").val()}
           postItem(theItem);
         });
